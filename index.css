@@ -19,6 +19,8 @@ main {
   padding: 1.5rem;
   position: relative;
   gap: 1.5rem;
+  background-color: #fec600;
+  color: white;
 }
 
 .menu-icon {
@@ -27,19 +29,58 @@ main {
   color: #fec600;
 }
 
+.menu-icon.show {
+  display: none;
+}
+
 .nav-links {
   list-style-type: none;
   display: none;
-  margin-left: 3rem;
+  flex-direction: column;
+  gap: 2rem;
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  background-color: #fec600;
+  color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  align-items: center;
+  z-index: 1000;
+  transition: 0.5s;
+}
+
+.hamburger-menu .menu-icon {
+  display: block;
+  cursor: pointer;
+  color: white;
 }
 
 @media (min-width: 768px) {
   .nav-links {
     gap: 5rem;
+    flex-direction: row;
+    background-color: white;
+    position: static;
+    color: black;
+    width: auto;
+  }
+
+  .hamburger-menu .menu-icon {
+    display: none;
+  }
+
+  .menu-icon.show {
+    display: block;
+  }
+
+  .navigation-bar {
+    background-color: white;
   }
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .nav-links {
     gap: 3rem;
     display: flex;
@@ -262,7 +303,7 @@ main {
   line-height: 2.25rem;
 }
 
-.schedule-formBox p{
+.schedule-formBox p {
   color: #fec600;
   font-weight: 700;
   font-size: 1.75rem;
@@ -276,14 +317,13 @@ main {
     line-height: auto;
   }
 
-  .schedule-formBox p{
+  .schedule-formBox p {
     font-size: auto;
     line-height: auto;
   }
 }
 
-
-.schedule-box form{
+.schedule-box form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -293,21 +333,20 @@ main {
   width: 100%;
 }
 
-@media screen and (max-width: 640px){
-  .schedule-box form{
+@media screen and (max-width: 640px) {
+  .schedule-box form {
     padding: auto 2rem;
   }
 }
 
-.schedule-box form .form-control{
+.schedule-box form .form-control {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
   /* width: ; */
-
 }
 
-.schedule-box form .dateCourse{
+.schedule-box form .dateCourse {
   display: flex;
   gap: 1.5rem;
   justify-content: space-between;
@@ -321,11 +360,11 @@ main {
   gap: 0.25rem;
 }
 
-.schedule-box form .form-control label{
+.schedule-box form .form-control label {
   padding: auto 0.25rem;
 }
 
-.schedule-box form .form-control input{
+.schedule-box form .form-control input {
   outline: 2px solid transparent;
   outline-offset: 2px;
   color: black;
@@ -338,11 +377,11 @@ main {
   border: none;
 }
 
-.form-control input:hover{
+.form-control input:hover {
   background-color: rgb(250, 244, 244);
 }
 
-.schedule-box form .form-buttons{
+.schedule-box form .form-buttons {
   display: flex;
   gap: 1rem;
   justify-content: center;
@@ -350,7 +389,7 @@ main {
   align-items: center;
 }
 
-form .form-buttons button.btn-arrow-enroll{
+form .form-buttons button.btn-arrow-enroll {
   color: white;
   border: none;
   display: flex;
@@ -366,7 +405,7 @@ form .form-buttons button.btn-arrow-enroll{
   cursor: pointer;
 }
 
-form .form-buttons button.btn-arrow-know{
+form .form-buttons button.btn-arrow-know {
   color: white;
   border: none;
   display: flex;
@@ -383,14 +422,11 @@ form .form-buttons button.btn-arrow-know{
   background-color: transparent;
 }
 
-
-
-
 @media screen and (max-width: 1300px) {
-  .home{
-      flex-direction: column;
+  .home {
+    flex-direction: column;
   }
-  .schedule-box{
-      align-items: center;
+  .schedule-box {
+    align-items: center;
   }
 }
