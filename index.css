@@ -85,6 +85,10 @@ main {
     gap: 3rem;
     display: flex;
   }
+
+  .nav-link:hover{
+    color: #fec600;
+  }
 }
 
 .nav-link {
@@ -92,9 +96,12 @@ main {
   font-weight: 600;
 }
 
-.nav-link:hover {
-  color: #fec600;
+.nav-link:hover{
+  color: white;
+  font-size: 1.02rem;
+  font-weight: 700;
 }
+
 
 .btn-login {
   background-color: #fec600;
